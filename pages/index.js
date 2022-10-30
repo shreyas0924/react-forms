@@ -9,13 +9,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='h-screen flex items-center justify-center '>
-        <form className='bg-white flex rounded-lg w-1/2 '>
-          <div className=''>
-            <h1>Lets get started</h1>
-            <p>Join our e learning platform today and unlock over ....... </p>
-          </div>
-          <div>
+        <form className='bg-white flex rounded-lg w-1/2 shadow-lg shadow-gray-300 '>
+          <div className='flex-1 text-gray-700 p-20'>
+            <h1 className='text-3xl pb-3 font-bold'> 
+              Let's get started 👋
+            </h1>
+            <p className='text-lg text-gray-500'>
+              Join our E-learning platform today and unlock over 500+ courses
+              and digital assets ready to download.
+            </p>
+            <div className='mt-6'>
 
+            </div>
           </div>
         </form>
       </main>
