@@ -19,6 +19,10 @@ export default function Home() {
               and digital assets ready to download.
             </p>
             <div className='mt-6'>
+            <div className='pb-4'>
+                <label className='block text-sm pb-2'>Name: </label>
+                <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2'></input>
+            </div>
 
             </div>
           </div>
