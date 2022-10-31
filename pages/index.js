@@ -14,9 +14,9 @@ export default function Home() {
     
     //Validate form
     validationSchema: Yup.object({
-      name: Yup.string().max(20, 'Name must be under 20 characters or less').required('Name is required'),
+      name: Yup.string().required('Name is required').max(20, 'Name must be under 20 characters or less'),
       email: Yup.string().email('Invalid email address').required('Email is required'),
-      terms: Yup.array().email().required('Terms of service must be checked'),
+      terms: Yup.array().required('Terms of service must be checked'),
     }),
 
     //Submit form
@@ -45,12 +45,12 @@ export default function Home() {
             </p>
             <div className='mt-6'>
             <div className='pb-4'>
-                <label className='block text-sm pb-2'>Name </label>
-                <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.name} onChange={formik.handleChange}></input>
+                <label className={`block text-sm pb-2 ${formik.touched.name && formik.errors.name ? 'text-red-400' : ''}`}>{formik.touched.name && formik.errors.name ? formik.errors.name : "Name"}</label>
+                <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur}></input>
             </div>
             <div className='pb-4'>
-                <label className='block text-sm pb-2'>Email </label>
-                <input type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.email} onChange={formik.handleChange}></input>
+                <label className={`block text-sm pb-2 ${formik.touched.email && formik.errors.email ? 'text-red-400' : ''}`}>{formik.touched.email && formik.errors.email ? formik.errors.email : "Email"}</label>
+                <input type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} ></input>
             </div>
             <div className='pb-4'>
                 <label className='block text-sm pb-2'>Country </label>
@@ -60,13 +60,35 @@ export default function Home() {
                 </select>
             </div>
 
-            <div className='pb-4'>
-                <label className='block text-sm pb-2'>Terms of service </label>
-                <div className='flex items-center gap-2'>
-                  <input type='checkbox' name='terms' className='h-5 w-5 text-[#3AACD9] border-2' value='checked' onChange={formik.handleChange}></input>
-                  <p>I agree to the Terms and Service that my data will be taken and sold... 😂</p>
+            <div className="pb-4">
+                <label
+                  htmlFor="terms"
+                  className={`block font-latoBold text-sm pb-2 ${
+                    formik.touched.terms && formik.errors.terms
+                      ? "text-red-400"
+                      : ""
+                  }`}
+                >
+                  {formik.touched.terms && formik.errors.terms
+                    ? formik.errors.terms
+                    : "Terms of service"}
+                </label>
+
+                <div className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    name="terms"
+                    value="checked"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className="h-5 w-5 text-teal-500 border-2  background-gray-500 focus:border-teal-500 focus:ring-teal-500"
+                  />
+                  <p className="text-sm font-latoBold text-gray-500">
+                    I agree to the Terms and Service that my data will be taken
+                    and sold.
+                  </p>
                 </div>
-            </div>
+              </div>
 
             <button className='bg-[#3AACD9] bold text-sm text-white mt-6 py-3 rounded-lg w-full' type='submit'>Start Learning Today!!</button>
             
