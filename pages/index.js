@@ -23,6 +23,19 @@ export default function Home() {
                 <label className='block text-sm pb-2'>Name: </label>
                 <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2'></input>
             </div>
+            <div className='pb-4'>
+                <label className='block text-sm pb-2'>Email: </label>
+                <input type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2'></input>
+            </div>
+            <div className='pb-4'>
+                <label className='block text-sm pb-2'>Country </label>
+                <select type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2'>
+                  <option>India</option>
+                  <option>Canada</option>
+                  <option>South Africa</option>
+                  <option>Iceland</option>
+                </select>
+            </div>
 
             </div>
           </div>
