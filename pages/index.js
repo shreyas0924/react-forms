@@ -20,22 +20,30 @@ export default function Home() {
             </p>
             <div className='mt-6'>
             <div className='pb-4'>
-                <label className='block text-sm pb-2'>Name: </label>
+                <label className='block text-sm pb-2'>Name </label>
                 <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2'></input>
             </div>
             <div className='pb-4'>
-                <label className='block text-sm pb-2'>Email: </label>
+                <label className='block text-sm pb-2'>Email </label>
                 <input type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2'></input>
             </div>
             <div className='pb-4'>
                 <label className='block text-sm pb-2'>Country </label>
-                <select type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2'>
+                <select name='country' className='border-2 border-gray-500 rounded-md p-2 w-1/2'>
                   <option>India</option>
-                  <option>Canada</option>
-                  <option>South Africa</option>
-                  <option>Iceland</option>
+                  <option>Some other country</option>
                 </select>
             </div>
+
+            <div className='pb-4'>
+                <label className='block text-sm pb-2'>Terms of service </label>
+                <div className='flex items-center gap-2'>
+                  <input type='checkbox' name='terms' value='checked' className='h-5 w-5 text-[#3AACD9] border-2'></input>
+                  <p>I agree to the Terms and Service that my data will be taken and sold... 😂</p>
+                </div>
+            </div>
+
+            <button className='bg-[#3AACD9] bold text-sm text-white mt-6 py-3 rounded-lg w-full' type='submit'>Start Learning Today!!</button>
 
             </div>
           </div>
