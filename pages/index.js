@@ -126,7 +126,7 @@ export default function Home() {
               <div className="pb-4">
                 <label
                   htmlFor="terms"
-                  className={`block font-bold text-sm pb-2 ${
+                  className={`block text-sm pb-2 ${
                     formik.touched.terms && formik.errors.terms
                       ? "text-red-400"
                       : ""
@@ -154,7 +154,8 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="bg-[#3AACD9] font-bold text-sm text-white py-3 mt-6 rounded-lg w-full"
+                className="bg-[#3AACD9] text-sm text-white py-3 mt-6 rounded-lg w-full"
+                
               >
                 Start learning today!
               </button>
