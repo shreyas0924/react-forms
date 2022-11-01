@@ -43,7 +43,7 @@ export default function Home() {
       <main className="  h-screen items-center flex justify-center">
         <form
           onSubmit={formik.handleSubmit}
-          className="bg-white flex rounded-lg w-1/2 font-latoRegular"
+          className='bg-white flex rounded-lg w-1/2 shadow-lg shadow-gray-300 '
         >
           <div className="flex-1 text-gray-700  p-20">
             <h1 className="text-3xl pb-2 font-latoBold">
@@ -93,7 +93,7 @@ export default function Home() {
                     ? formik.errors.email
                     : "Email"}
                 </label>
-                
+
                 <input
                   className="border-2 border-gray-500 p-2 rounded-md w-1/2"
                   type="email"
