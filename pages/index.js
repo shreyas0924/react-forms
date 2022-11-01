@@ -46,8 +46,8 @@ export default function Home() {
           className='bg-white flex rounded-lg w-1/2 shadow-lg shadow-gray-300 '
         >
           <div className="flex-1 text-gray-700  p-20">
-            <h1 className="text-3xl pb-2 font-latoBold">
-              Let's get started 👋
+            <h1 className="text-3xl pb-2 font-bold">
+              Lets get started 
             </h1>
             <p className="text-lg  text-gray-500">
               Join our E-learning platform today and unlock over 500+ courses
@@ -58,7 +58,7 @@ export default function Home() {
               <div className="pb-4">
                 <label
                   htmlFor="name"
-                  className={`block font-latoBold text-sm pb-2 ${
+                  className={`block font-bold text-sm pb-2 ${
                     formik.touched.name && formik.errors.name
                       ? "text-red-400"
                       : ""
@@ -68,7 +68,7 @@ export default function Home() {
                     ? formik.errors.name
                     : "Name"}
                 </label>
-                <p className="text-sm font-latoBold text-red-400 "></p>
+                <p className="text-sm font-bold text-red-400 "></p>
                 <input
                   className="border-2 border-gray-500 p-2 rounded-md w-1/2"
                   type="text"
@@ -83,7 +83,7 @@ export default function Home() {
               <div className="pb-4">
                 <label
                   htmlFor="email"
-                  className={`block font-latoBold text-sm pb-2 ${
+                  className={`block font-bold text-sm pb-2 ${
                     formik.touched.email && formik.errors.email
                       ? "text-red-400"
                       : ""
@@ -108,7 +108,7 @@ export default function Home() {
               <div className="pb-4">
                 <label
                   htmlFor="country"
-                  className="block font-latoBold text-sm pb-2"
+                  className="block font-bold text-sm pb-2"
                 >
                   Country
                 </label>
@@ -126,7 +126,7 @@ export default function Home() {
               <div className="pb-4">
                 <label
                   htmlFor="terms"
-                  className={`block font-latoBold text-sm pb-2 ${
+                  className={`block font-bold text-sm pb-2 ${
                     formik.touched.terms && formik.errors.terms
                       ? "text-red-400"
                       : ""
@@ -146,7 +146,7 @@ export default function Home() {
                     onBlur={formik.handleBlur}
                     className="h-5 w-5 text-[#3AACD9] border-2  background-gray-500"
                   />
-                  <p className="text-sm font-latoBold text-gray-500">
+                  <p className="text-sm font-bold text-gray-500">
                     I agree to the Terms and Service that my data will be taken
                     and sold.
                   </p>
@@ -154,7 +154,7 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="bg-[#3AACD9] font-latoBold text-sm text-white py-3 mt-6 rounded-lg w-full"
+                className="bg-[#3AACD9] font-bold text-sm text-white py-3 mt-6 rounded-lg w-full"
               >
                 Start learning today!
               </button>
