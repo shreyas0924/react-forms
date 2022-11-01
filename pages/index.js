@@ -47,7 +47,7 @@ export default function Home() {
         >
           <div className="flex-1 text-gray-700  p-20">
             <h1 className="text-3xl pb-2 font-bold">
-              Lets get started 
+              Lets get started 👋
             </h1>
             <p className="text-lg  text-gray-500">
               Join our E-learning platform today and unlock over 500+ courses
