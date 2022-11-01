@@ -93,8 +93,7 @@ export default function Home() {
                     ? formik.errors.email
                     : "Email"}
                 </label>
-
-                <p></p>
+                
                 <input
                   className="border-2 border-gray-500 p-2 rounded-md w-1/2"
                   type="email"
