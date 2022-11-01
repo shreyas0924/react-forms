@@ -146,7 +146,7 @@ export default function Home() {
                     onBlur={formik.handleBlur}
                     className="h-5 w-5 text-[#3AACD9] border-2  background-gray-500"
                   />
-                  <p className="text-sm font-bold text-gray-500">
+                  <p className="text-sm  text-gray-500">
                     I agree to the Terms and Service that my data will be taken
                     and sold.
                   </p>
@@ -155,7 +155,7 @@ export default function Home() {
               <button
                 type="submit"
                 className="bg-[#3AACD9] text-sm text-white py-3 mt-6 rounded-lg w-full"
-                
+
               >
                 Start learning today!
               </button>
