@@ -1,9 +1,15 @@
 import Head from 'next/head'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'  // form validation
+import { useRouter } from 'next/router'
 
 export default function Home() {
 
+  //router
+  const router = useRouter()
+
+
+  //formik
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -22,10 +28,13 @@ export default function Home() {
     //Submit form
     onSubmit: (values) => {
       console.log(formik.values)
+      router.push({pathname: '/success', query: values})
     },
   })
 
   console.log(formik.values)
+
+
   return (
     <div>
       <Head>
@@ -45,18 +54,42 @@ export default function Home() {
             </p>
             <div className='mt-6'>
             <div className='pb-4'>
-                <label className={`block text-sm pb-2 ${formik.touched.name && formik.errors.name ? 'text-red-400' : ''}`}>{formik.touched.name && formik.errors.name ? formik.errors.name : "Name"}</label>
-                <input type='text' placeholder='Enter your name' name='name' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur}></input>
+                <label className={`block text-sm pb-2 ${formik.touched.name && formik.errors.name ? 'text-red-400' : ''}`}>
+                  {formik.touched.name && formik.errors.name ? formik.errors.name : "Name"}
+                </label>
+                <input 
+                  type='text' 
+                  placeholder='Enter your name' 
+                  name='name' 
+                  className='border-2 border-gray-500 rounded-md p-2 w-1/2' 
+                  value={formik.values.name} 
+                  onChange={formik.handleChange} 
+                  onBlur={formik.handleBlur}>
+                </input>
             </div>
             <div className='pb-4'>
-                <label className={`block text-sm pb-2 ${formik.touched.email && formik.errors.email ? 'text-red-400' : ''}`}>{formik.touched.email && formik.errors.email ? formik.errors.email : "Email"}</label>
-                <input type='email' placeholder='Enter your email' name='email' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} ></input>
+                <label className={`block text-sm pb-2 ${formik.touched.email && formik.errors.email ? 'text-red-400' : ''}`}>
+                  {formik.touched.email && formik.errors.email ? formik.errors.email : "Email"}
+                </label>
+                <input 
+                  type='email' 
+                  placeholder='Enter your email' 
+                  name='email' 
+                  className='border-2 border-gray-500 rounded-md p-2 w-1/2' 
+                  value={formik.values.email} 
+                  onChange={formik.handleChange} 
+                  onBlur={formik.handleBlur} >
+                </input>
             </div>
             <div className='pb-4'>
                 <label className='block text-sm pb-2'>Country </label>
-                <select name='country' className='border-2 border-gray-500 rounded-md p-2 w-1/2' value={formik.values.country} onChange={formik.handleChange}>
-                  <option>India</option>
-                  <option>Some other country</option>
+                <select 
+                  name='country' 
+                  className='border-2 border-gray-500 rounded-md p-2 w-1/2' 
+                  value={formik.values.country} 
+                  onChange={formik.handleChange}>
+                    <option>India</option>
+                    <option>Some other country</option>
                 </select>
             </div>
 
